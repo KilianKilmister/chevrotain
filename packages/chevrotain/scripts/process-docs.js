@@ -5,11 +5,14 @@
  * This is because the concept of "protected" interface methods
  * Is not supported in TypeScript as it does not make sense...
  */
-const fs = require("fs-extra")
-const path = require("path")
+import * as fs from "fs/promises";
+import * as path from "path";
+import { fileURLToPath } from 'url'
+
+const __dirname = path.resolve(fileURLToPath(import.meta.url), '../')
 
 const apiPath = path.resolve(__dirname, "../api.d.ts")
-const apiString = fs.readFileSync(apiPath, "utf8").toString()
+const apiString = await fs.readFile(apiPath, "utf8")
 
 let fixedApiString = apiString.replace(/\/\* protected \*\//g, "protected")
 fixedApiString = fixedApiString.replace(
@@ -18,8 +21,7 @@ fixedApiString = fixedApiString.replace(
 )
 
 const apiDirPath = path.resolve(__dirname, "../lib")
-fs.ensureDirSync(apiDirPath)
-fs.writeFileSync(apiDirPath + "/chevrotain.d.ts", fixedApiString)
+fs.writeFile(`${apiDirPath}/chevrotain.d.ts`, fixedApiString)
 
 // copy api.d.ts to lib/api.d.ts so that src/**/*.ts works when importing this file.
-fs.writeFileSync(apiDirPath + "/api.d.ts", apiString)
+fs.writeFile(`${apiDirPath}/api.d.ts`, apiString)

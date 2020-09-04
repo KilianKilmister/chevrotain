@@ -1,5 +1,7 @@
-import { BaseRegExpVisitor } from "regexp-to-ast"
-import { IRegExpExec, Lexer, LexerDefinitionErrorType } from "./lexer_public"
+import regexToAST from "regexp-to-ast"
+
+const { BaseRegExpVisitor } = regexToAST
+import { IRegExpExec, Lexer, LexerDefinitionErrorType } from "./lexer_public.js"
 import {
   compact,
   contains,
@@ -25,20 +27,20 @@ import {
   PRINT_ERROR,
   reduce,
   reject
-} from "../utils/utils"
+} from "../utils/utils.js"
 import {
   canMatchCharCode,
   failedOptimizationPrefixMsg,
   getOptimizedStartCodesIndices
-} from "./reg_exp"
+} from "./reg_exp.js"
 import {
   ILexerDefinitionError,
   ILineTerminatorsTester,
   IMultiModeLexerDefinition,
   IToken,
   TokenType
-} from "../../api"
-import { getRegExpAst } from "./reg_exp_parser"
+} from "../../api.js"
+import { getRegExpAst } from "./reg_exp_parser.js"
 
 const PATTERN = "PATTERN"
 export const DEFAULT_MODE = "defaultMode"

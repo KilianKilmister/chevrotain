@@ -2,20 +2,20 @@ import {
   IParserConfig,
   IParserErrorMessageProvider,
   IRecognitionException
-} from "../../../../api"
+} from "../../../../api.js"
 import {
   EarlyExitException,
   isRecognitionException,
   NoViableAltException
-} from "../../exceptions_public"
-import { cloneArr, has } from "../../../utils/utils"
+} from "../../exceptions_public.js"
+import { cloneArr, has } from "../../../utils/utils.js"
 import {
   getLookaheadPathsForOptionalProd,
   getLookaheadPathsForOr,
   PROD_TYPE
-} from "../../grammar/lookahead"
-import { MixedInParser } from "./parser_traits"
-import { DEFAULT_PARSER_CONFIG } from "../parser"
+} from "../../grammar/lookahead.js"
+import { MixedInParser } from "./parser_traits.js"
+import { DEFAULT_PARSER_CONFIG } from "../parser.js"
 
 /**
  * Trait responsible for runtime parsing errors.

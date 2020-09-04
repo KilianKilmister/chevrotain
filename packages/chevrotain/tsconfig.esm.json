@@ -4,6 +4,7 @@
     "moduleResolution": "node",
     "module": "esnext",
     "target": "esnext",
-    "outDir": "lib_esm"
+    "outDir": "lib_esm",
+    "allowSyntheticDefaultImports": true,
   }
 }

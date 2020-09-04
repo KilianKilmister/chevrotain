@@ -12,14 +12,14 @@ import {
   OrMethodOpts,
   SubruleMethodOpts,
   TokenType
-} from "../../../../api"
-import { contains, values } from "../../../utils/utils"
-import { isRecognitionException } from "../../exceptions_public"
-import { DEFAULT_RULE_CONFIG, ParserDefinitionErrorType } from "../parser"
-import { defaultGrammarValidatorErrorProvider } from "../../errors_public"
-import { validateRuleIsOverridden } from "../../grammar/checks"
-import { MixedInParser } from "./parser_traits"
-import { Rule, serializeGrammar } from "../../grammar/gast/gast_public"
+} from "../../../../api.js"
+import { contains, values } from "../../../utils/utils.js"
+import { isRecognitionException } from "../../exceptions_public.js"
+import { DEFAULT_RULE_CONFIG, ParserDefinitionErrorType } from "../parser.js"
+import { defaultGrammarValidatorErrorProvider } from "../../errors_public.js"
+import { validateRuleIsOverridden } from "../../grammar/checks.js"
+import { MixedInParser } from "./parser_traits.js"
+import { Rule, serializeGrammar } from "../../grammar/gast/gast_public.js"
 
 /**
  * This trait is responsible for implementing the public API

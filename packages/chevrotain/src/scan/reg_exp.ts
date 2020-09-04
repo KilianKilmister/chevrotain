@@ -1,4 +1,5 @@
-import { VERSION, BaseRegExpVisitor } from "regexp-to-ast"
+import regexpToAst from "regexp-to-ast"
+const { VERSION, BaseRegExpVisitor } = regexpToAst
 import {
   flatten,
   map,
@@ -10,9 +11,9 @@ import {
   isArray,
   every,
   values
-} from "../utils/utils"
-import { getRegExpAst } from "./reg_exp_parser"
-import { charCodeToOptimizedIndex, minOptimizationVal } from "./lexer"
+} from "../utils/utils.js"
+import { getRegExpAst } from "./reg_exp_parser.js"
+import { charCodeToOptimizedIndex, minOptimizationVal } from "./lexer.js"
 
 const complementErrorMessage =
   "Complement Sets are not supported for first char optimization"

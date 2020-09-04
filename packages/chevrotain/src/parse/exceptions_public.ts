@@ -1,5 +1,5 @@
-import { contains } from "../utils/utils"
-import { IToken } from "../../api"
+import { contains } from "../utils/utils.js"
+import { IToken } from "../../api.js"
 
 const MISMATCHED_TOKEN_EXCEPTION = "MismatchedTokenException"
 const NO_VIABLE_ALT_EXCEPTION = "NoViableAltException"

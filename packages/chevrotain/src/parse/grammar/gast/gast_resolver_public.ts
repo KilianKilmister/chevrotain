@@ -1,20 +1,20 @@
-import { Rule } from "./gast_public"
+import { Rule } from "./gast_public.js"
 
-import { defaults, forEach } from "../../../utils/utils"
-import { resolveGrammar as orgResolveGrammar } from "../resolver"
-import { validateGrammar as orgValidateGrammar } from "../checks"
+import { defaults, forEach } from "../../../utils/utils.js"
+import { resolveGrammar as orgResolveGrammar } from "../resolver.js"
+import { validateGrammar as orgValidateGrammar } from "../checks.js"
 import {
   defaultGrammarResolverErrorProvider,
   defaultGrammarValidatorErrorProvider
-} from "../../errors_public"
-import { DslMethodsCollectorVisitor } from "./gast"
+} from "../../errors_public.js"
+import { DslMethodsCollectorVisitor } from "./gast.js"
 import {
   IGrammarResolverErrorMessageProvider,
   IGrammarValidatorErrorMessageProvider,
   IParserDefinitionError,
   IProductionWithOccurrence,
   TokenType
-} from "../../../../api"
+} from "../../../../api.js"
 
 export function resolveGrammar(options: {
   rules: Rule[]

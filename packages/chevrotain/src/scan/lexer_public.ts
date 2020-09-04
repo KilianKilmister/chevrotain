@@ -8,7 +8,7 @@ import {
   performWarningRuntimeChecks,
   SUPPORT_STICKY,
   validatePatterns
-} from "./lexer"
+} from "./lexer.js"
 import {
   cloneArr,
   cloneObj,
@@ -27,8 +27,8 @@ import {
   reject,
   timer,
   toFastProperties
-} from "../utils/utils"
-import { augmentTokenTypes } from "./tokens"
+} from "../utils/utils.js"
+import { augmentTokenTypes } from "./tokens.js"
 import {
   CustomPatternMatcherFunc,
   ILexerConfig,
@@ -37,9 +37,9 @@ import {
   IMultiModeLexerDefinition,
   IToken,
   TokenType
-} from "../../api"
-import { defaultLexerErrorProvider } from "../scan/lexer_errors_public"
-import { clearRegExpParserCache } from "./reg_exp_parser"
+} from "../../api.js"
+import { defaultLexerErrorProvider } from "../scan/lexer_errors_public.js"
+import { clearRegExpParserCache } from "./reg_exp_parser.js"
 
 export interface ILexingResult {
   tokens: IToken[]

@@ -8,10 +8,10 @@ import {
   isUndefined,
   keys,
   map
-} from "../../utils/utils"
-import { defineNameProp, functionName } from "../../lang/lang_extensions"
-import { validTermsPattern } from "../grammar/checks"
-import { ICstVisitor } from "../../../api"
+} from "../../utils/utils.js"
+import { defineNameProp, functionName } from "../../lang/lang_extensions.js"
+import { validTermsPattern } from "../grammar/checks.js"
+import { ICstVisitor } from "../../../api.js"
 
 export function defaultVisit<IN, OUT>(ctx: any, param: IN): OUT {
   let childrenNames = keys(ctx)

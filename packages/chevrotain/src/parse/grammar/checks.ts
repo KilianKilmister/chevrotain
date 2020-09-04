@@ -1,4 +1,4 @@
-import * as utils from "../../utils/utils"
+import * as utils from "../../utils/utils.js"
 import {
   contains,
   every,
@@ -9,14 +9,14 @@ import {
   map,
   reduce,
   reject
-} from "../../utils/utils"
+} from "../../utils/utils.js"
 import {
   IParserAmbiguousAlternativesDefinitionError,
   IParserDuplicatesDefinitionError,
   IParserEmptyAlternativeDefinitionError,
   ParserDefinitionErrorType
-} from "../parser/parser"
-import { getProductionDslName, isOptionalProd } from "./gast/gast"
+} from "../parser/parser.js"
+import { getProductionDslName, isOptionalProd } from "./gast/gast.js"
 import {
   Alternative,
   containsPath,
@@ -24,8 +24,8 @@ import {
   getLookaheadPathsForOr,
   getProdType,
   isStrictPrefixOfPath
-} from "./lookahead"
-import { nextPossibleTokensAfter } from "./interpreter"
+} from "./lookahead.js"
+import { nextPossibleTokensAfter } from "./interpreter.js"
 import {
   Alternation,
   Alternative as AlternativeGAST,
@@ -37,15 +37,15 @@ import {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "./gast/gast_public"
-import { GAstVisitor } from "./gast/gast_visitor_public"
+} from "./gast/gast_public.js"
+import { GAstVisitor } from "./gast/gast_visitor_public.js"
 import {
   IGrammarValidatorErrorMessageProvider,
   IParserDefinitionError,
   IProduction,
   IProductionWithOccurrence,
   TokenType
-} from "../../../api"
+} from "../../../api.js"
 
 export function validateGrammar(
   topLevels: Rule[],

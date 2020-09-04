@@ -1,20 +1,20 @@
-import { hasTokenLabel, tokenLabel } from "../scan/tokens_public"
-import * as utils from "../utils/utils"
-import { first, map, reduce } from "../utils/utils"
+import { hasTokenLabel, tokenLabel } from "../scan/tokens_public.js"
+import * as utils from "../utils/utils.js"
+import { first, map, reduce } from "../utils/utils.js"
 import {
   Alternation,
   NonTerminal,
   Rule,
   Terminal
-} from "./grammar/gast/gast_public"
-import { getProductionDslName } from "./grammar/gast/gast"
+} from "./grammar/gast/gast_public.js"
+import { getProductionDslName } from "./grammar/gast/gast.js"
 import {
   IGrammarResolverErrorMessageProvider,
   IGrammarValidatorErrorMessageProvider,
   IParserErrorMessageProvider,
   IProductionWithOccurrence,
   TokenType
-} from "../../api"
+} from "../../api.js"
 
 export const defaultParserErrorProvider: IParserErrorMessageProvider = {
   buildMismatchTokenMessage({ expected, actual, previous, ruleName }): string {
@@ -148,8 +148,8 @@ export const defaultGrammarValidatorErrorProvider: IGrammarValidatorErrorMessage
     }
                   appears more than once (${
                     duplicateProds.length
-                  } times) in the top level rule: ->${topLevelName}<-.                  
-                  For further details see: https://sap.github.io/chevrotain/docs/FAQ.html#NUMERICAL_SUFFIXES 
+                  } times) in the top level rule: ->${topLevelName}<-.
+                  For further details see: https://sap.github.io/chevrotain/docs/FAQ.html#NUMERICAL_SUFFIXES
                   `
 
     // white space trimming time! better to trim afterwards as it allows to use WELL formatted multi line template strings...

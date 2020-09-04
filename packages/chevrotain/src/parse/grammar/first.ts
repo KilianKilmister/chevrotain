@@ -1,7 +1,7 @@
-import { uniq, map, flatten } from "../../utils/utils"
-import { AbstractProduction, NonTerminal, Terminal } from "./gast/gast_public"
-import { isBranchingProd, isOptionalProd, isSequenceProd } from "./gast/gast"
-import { IProduction, TokenType } from "../../../api"
+import { uniq, map, flatten } from "../../utils/utils.js"
+import { AbstractProduction, NonTerminal, Terminal } from "./gast/gast_public.js"
+import { isBranchingProd, isOptionalProd, isSequenceProd } from "./gast/gast.js"
+import { IProduction, TokenType } from "../../../api.js"
 
 export function first(prod: IProduction): TokenType[] {
   /* istanbul ignore else */

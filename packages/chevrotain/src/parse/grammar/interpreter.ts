@@ -1,4 +1,4 @@
-import { RestWalker } from "./rest"
+import { RestWalker } from "./rest.js"
 import {
   cloneArr,
   drop,
@@ -7,9 +7,9 @@ import {
   forEach,
   isEmpty,
   last
-} from "../../utils/utils"
-import { first } from "./first"
-import { TokenMatcher } from "../parser/parser"
+} from "../../utils/utils.js"
+import { first } from "./first.js"
+import { TokenMatcher } from "../parser/parser.js"
 import {
   AbstractProduction,
   Alternation,
@@ -22,7 +22,7 @@ import {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "./gast/gast_public"
+} from "./gast/gast_public.js"
 import {
   IGrammarPath,
   IProduction,
@@ -30,7 +30,7 @@ import {
   IToken,
   ITokenGrammarPath,
   TokenType
-} from "../../../api"
+} from "../../../api.js"
 
 export abstract class AbstractNextPossibleTokensWalker extends RestWalker {
   protected possibleTokTypes: TokenType[] = []

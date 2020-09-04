@@ -1,7 +1,7 @@
-import { IParserConfig } from "../../../../api"
-import { has, timer } from "../../../utils/utils"
-import { MixedInParser } from "./parser_traits"
-import { DEFAULT_PARSER_CONFIG } from "../parser"
+import { IParserConfig } from "../../../../api.js"
+import { has, timer } from "../../../utils/utils.js"
+import { MixedInParser } from "./parser_traits.js"
+import { DEFAULT_PARSER_CONFIG } from "../parser.js"
 
 /**
  * Trait responsible for runtime parsing errors.

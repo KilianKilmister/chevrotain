@@ -1,5 +1,5 @@
-import { VERSION } from "../version"
-import { ISerializedGast } from "../../api"
+import { VERSION } from "../version.js"
+import { ISerializedGast } from "../../api.js"
 
 export function createSyntaxDiagramsCode(
   grammar: ISerializedGast[],
@@ -33,7 +33,7 @@ export function createSyntaxDiagramsCode(
 <script src='${resourceBase}src/main.js'></script>
 `
   const diagramsDiv = `
-<div id="diagrams" align="center"></div>    
+<div id="diagrams" align="center"></div>
 `
   const serializedGrammar = `
 <script>

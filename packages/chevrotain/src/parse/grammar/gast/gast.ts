@@ -1,4 +1,4 @@
-import { contains, every, has, some } from "../../../utils/utils"
+import { contains, every, has, some } from "../../../utils/utils.js"
 import {
   AbstractProduction,
   Alternation,
@@ -11,9 +11,9 @@ import {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "./gast_public"
-import { GAstVisitor } from "./gast_visitor_public"
-import { IProduction, IProductionWithOccurrence } from "../../../../api"
+} from "./gast_public.js"
+import { GAstVisitor } from "./gast_visitor_public.js"
+import { IProduction, IProductionWithOccurrence } from "../../../../api.js"
 
 export function isSequenceProd(prod: IProduction): boolean {
   return (

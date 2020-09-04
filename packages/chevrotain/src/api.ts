@@ -1,16 +1,16 @@
 /* istanbul ignore file - tricky to import some things from this module during testing */
 
 // semantic version
-export { VERSION } from "./version"
+export { VERSION } from "./version.js"
 
 export {
   CstParser,
   EmbeddedActionsParser,
   ParserDefinitionErrorType,
   EMPTY_ALT
-} from "./parse/parser/parser"
+} from "./parse/parser/parser.js"
 
-export { Lexer, LexerDefinitionErrorType } from "./scan/lexer_public"
+export { Lexer, LexerDefinitionErrorType } from "./scan/lexer_public.js"
 
 // Tokens utilities
 
@@ -21,7 +21,7 @@ export {
   tokenLabel,
   tokenMatcher,
   tokenName
-} from "./scan/tokens_public"
+} from "./scan/tokens_public.js"
 
 // Other Utilities
 
@@ -29,7 +29,7 @@ export {
   defaultGrammarResolverErrorProvider,
   defaultGrammarValidatorErrorProvider,
   defaultParserErrorProvider
-} from "./parse/errors_public"
+} from "./parse/errors_public.js"
 
 export {
   EarlyExitException,
@@ -37,9 +37,9 @@ export {
   MismatchedTokenException,
   NotAllInputParsedException,
   NoViableAltException
-} from "./parse/exceptions_public"
+} from "./parse/exceptions_public.js"
 
-export { defaultLexerErrorProvider } from "./scan/lexer_errors_public"
+export { defaultLexerErrorProvider } from "./scan/lexer_errors_public.js"
 
 // grammar reflection API
 
@@ -54,22 +54,22 @@ export {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "./parse/grammar/gast/gast_public"
+} from "./parse/grammar/gast/gast_public.js"
 
 // GAST Utilities
 
 export {
   serializeGrammar,
   serializeProduction
-} from "./parse/grammar/gast/gast_public"
+} from "./parse/grammar/gast/gast_public.js"
 
-export { GAstVisitor } from "./parse/grammar/gast/gast_visitor_public"
+export { GAstVisitor } from "./parse/grammar/gast/gast_visitor_public.js"
 
 export {
   assignOccurrenceIndices,
   resolveGrammar,
   validateGrammar
-} from "./parse/grammar/gast/gast_resolver_public"
+} from "./parse/grammar/gast/gast_resolver_public.js"
 
 /* istanbul ignore next */
 export function clearCache() {
@@ -80,12 +80,12 @@ export function clearCache() {
   )
 }
 
-export { createSyntaxDiagramsCode } from "./diagrams/render_public"
+export { createSyntaxDiagramsCode } from "./diagrams/render_public.js"
 
 export {
   generateParserFactory,
   generateParserModule
-} from "./generate/generate_public"
+} from "./generate/generate_public.js"
 
 export class Parser {
   constructor() {

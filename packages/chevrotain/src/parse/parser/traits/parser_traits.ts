@@ -1,19 +1,19 @@
-import { ErrorHandler } from "./error_handler"
-import { LexerAdapter } from "./lexer_adapter"
-import { LooksAhead } from "./looksahead"
-import { RecognizerApi } from "./recognizer_api"
-import { RecognizerEngine } from "./recognizer_engine"
-import { Recoverable } from "./recoverable"
-import { TreeBuilder } from "./tree_builder"
+import { ErrorHandler } from "./error_handler.js"
+import { LexerAdapter } from "./lexer_adapter.js"
+import { LooksAhead } from "./looksahead.js"
+import { RecognizerApi } from "./recognizer_api.js"
+import { RecognizerEngine } from "./recognizer_engine.js"
+import { Recoverable } from "./recoverable.js"
+import { TreeBuilder } from "./tree_builder.js"
 import {
   Parser as ParserConstructorImpel,
   CstParser as CstParserConstructorImpel,
   EmbeddedActionsParser as EmbeddedActionsParserConstructorImpel
-} from "../parser"
-import * as defs from "../../../../api"
-import { ContentAssist } from "./context_assist"
-import { GastRecorder } from "./gast_recorder"
-import { PerformanceTracer } from "./perf_tracer"
+} from "../parser.js"
+import * as defs from "../../../../api.js"
+import { ContentAssist } from "./context_assist.js"
+import { GastRecorder } from "./gast_recorder.js"
+import { PerformanceTracer } from "./perf_tracer.js"
 
 /**
  * This Type combines all the Parser traits.

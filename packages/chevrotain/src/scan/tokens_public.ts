@@ -1,7 +1,7 @@
-import { has, isString, isUndefined } from "../utils/utils"
-import { Lexer } from "./lexer_public"
-import { augmentTokenTypes, tokenStructuredMatcher } from "./tokens"
-import { IToken, ITokenConfig, TokenType } from "../../api"
+import { has, isString, isUndefined } from "../utils/utils.js"
+import { Lexer } from "./lexer_public.js"
+import { augmentTokenTypes, tokenStructuredMatcher } from "./tokens.js"
+import { IToken, ITokenConfig, TokenType } from "../../api.js"
 
 export function tokenLabel(tokType: TokenType): string {
   if (hasTokenLabel(tokType)) {

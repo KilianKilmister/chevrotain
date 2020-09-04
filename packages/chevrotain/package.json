@@ -65,7 +65,7 @@
     "clean": "shx rm -rf coverage dev lib",
     "clean:esm": "shx rm -rf lib_esm",
     "lint": "tslint --project tsconfig.json",
-    "compile": "tsc && node ./scripts/fix-coverage-report.js",
+    "compile": "tsc -p . && node ./scripts/fix-coverage-report.js",
     "compile:esm": "tsc --project tsconfig.esm.json && cp ./esm_pkg/* ./lib_esm/",
     "compile:watch": "tsc -w",
     "compile:def": "npm-run-all compile-def-api compile-def-modules compile-def-namespace",
@@ -88,7 +88,8 @@
     "bundle:min": "webpack --config webpack_release_min.config.js"
   },
   "dependencies": {
-    "regexp-to-ast": "0.5.0"
+    "regexp-to-ast": "0.5.0",
+    "npm-run-all": "^4.1.5"
   },
   "devDependencies": {
     "@types/chai": "^4.0.10",

@@ -3,12 +3,12 @@ import {
   addTerminalToCst,
   setNodeLocationFull,
   setNodeLocationOnlyOffset
-} from "../../cst/cst"
-import { has, isUndefined, keys, NOOP } from "../../../utils/utils"
+} from "../../cst/cst.js"
+import { has, isUndefined, keys, NOOP } from "../../../utils/utils.js"
 import {
   createBaseSemanticVisitorConstructor,
   createBaseVisitorConstructorWithDefaults
-} from "../../cst/cst_visitor"
+} from "../../cst/cst_visitor.js"
 import {
   CstNode,
   CstNodeLocation,
@@ -16,9 +16,9 @@ import {
   IParserConfig,
   IToken,
   nodeLocationTrackingOptions
-} from "../../../../api"
-import { MixedInParser } from "./parser_traits"
-import { DEFAULT_PARSER_CONFIG } from "../parser"
+} from "../../../../api.js"
+import { MixedInParser } from "./parser_traits.js"
+import { DEFAULT_PARSER_CONFIG } from "../parser.js"
 
 /**
  * This trait is responsible for the CST building logic.

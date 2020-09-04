@@ -1,14 +1,14 @@
 import {
   IParserUnresolvedRefDefinitionError,
   ParserDefinitionErrorType
-} from "../parser/parser"
-import { forEach, values } from "../../utils/utils"
-import { NonTerminal, Rule } from "./gast/gast_public"
-import { GAstVisitor } from "./gast/gast_visitor_public"
+} from "../parser/parser.js"
+import { forEach, values } from "../../utils/utils.js"
+import { NonTerminal, Rule } from "./gast/gast_public.js"
+import { GAstVisitor } from "./gast/gast_visitor_public.js"
 import {
   IGrammarResolverErrorMessageProvider,
   IParserDefinitionError
-} from "../../../api"
+} from "../../../api.js"
 
 export function resolveGrammar(
   topLevels: Record<string, Rule>,

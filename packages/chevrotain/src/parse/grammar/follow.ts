@@ -1,9 +1,9 @@
-import { RestWalker } from "./rest"
-import { first } from "./first"
-import { assign, forEach } from "../../utils/utils"
-import { IN } from "../constants"
-import { Alternative, NonTerminal, Rule, Terminal } from "./gast/gast_public"
-import { IProduction, TokenType } from "../../../api"
+import { RestWalker } from "./rest.js"
+import { first } from "./first.js"
+import { assign, forEach } from "../../utils/utils.js"
+import { IN } from "../constants.js"
+import { Alternative, NonTerminal, Rule, Terminal } from "./gast/gast_public.js"
+import { IProduction, TokenType } from "../../../api.js"
 
 // This ResyncFollowsWalker computes all of the follows required for RESYNC
 // (skipping reference production).

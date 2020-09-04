@@ -1,4 +1,4 @@
-import { ILexerErrorMessageProvider, IToken } from "../../api"
+import { ILexerErrorMessageProvider, IToken } from "../../api.js"
 
 export const defaultLexerErrorProvider: ILexerErrorMessageProvider = {
   buildUnableToPopLexerModeMessage(token: IToken): string {

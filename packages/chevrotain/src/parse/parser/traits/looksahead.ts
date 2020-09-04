@@ -4,14 +4,14 @@ import {
   buildLookaheadFuncForOr,
   buildSingleAlternativeLookaheadFunction,
   PROD_TYPE
-} from "../../grammar/lookahead"
-import { forEach, has, isES2015MapSupported } from "../../../utils/utils"
+} from "../../grammar/lookahead.js"
+import { forEach, has, isES2015MapSupported } from "../../../utils/utils.js"
 import {
   DEFAULT_PARSER_CONFIG,
   lookAheadSequence,
   TokenMatcher
-} from "../parser"
-import { IOrAlt, IParserConfig } from "../../../../api"
+} from "../parser.js"
+import { IOrAlt, IParserConfig } from "../../../../api.js"
 import {
   AT_LEAST_ONE_IDX,
   AT_LEAST_ONE_SEP_IDX,
@@ -20,10 +20,10 @@ import {
   MANY_SEP_IDX,
   OPTION_IDX,
   OR_IDX
-} from "../../grammar/keys"
-import { MixedInParser } from "./parser_traits"
-import { Rule } from "../../grammar/gast/gast_public"
-import { collectMethods, getProductionDslName } from "../../grammar/gast/gast"
+} from "../../grammar/keys.js"
+import { MixedInParser } from "./parser_traits.js"
+import { Rule } from "../../grammar/gast/gast_public.js"
+import { collectMethods, getProductionDslName } from "../../grammar/gast/gast.js"
 
 /**
  * Trait responsible for the lookahead related utilities and optimizations.

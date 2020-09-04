@@ -1,5 +1,5 @@
-import { Rule, IParserConfig, TokenVocabulary, BaseParser } from "../../api"
-import { genUmdModule, genWrapperFunction } from "./generate"
+import { Rule, IParserConfig, TokenVocabulary, BaseParser } from "../../api.js"
+import { genUmdModule, genWrapperFunction } from "./generate.js"
 
 export function generateParserFactory<T extends BaseParser>(options: {
   name: string

@@ -9,8 +9,8 @@ import {
   isArray,
   isEmpty,
   map
-} from "../utils/utils"
-import { TokenType } from "../../api"
+} from "../utils/utils.js"
+import { TokenType } from "../../api.js"
 
 export function tokenStructuredMatcher(tokInstance, tokConstructor) {
   const instanceType = tokInstance.tokenTypeIdx

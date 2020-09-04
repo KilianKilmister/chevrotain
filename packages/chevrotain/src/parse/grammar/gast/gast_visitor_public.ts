@@ -9,8 +9,8 @@ import {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "./gast_public"
-import { IProduction } from "../../../../api"
+} from "./gast_public.js"
+import { IProduction } from "../../../../api.js"
 
 export abstract class GAstVisitor {
   public visit(node: IProduction): any {

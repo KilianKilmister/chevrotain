@@ -1,12 +1,12 @@
-import { assign, forEach, isRegExp, map, pick } from "../../../utils/utils"
-import { tokenLabel } from "../../../scan/tokens_public"
+import { assign, forEach, isRegExp, map, pick } from "../../../utils/utils.js"
+import { tokenLabel } from "../../../scan/tokens_public.js"
 import {
   IGASTVisitor,
   IProduction,
   IProductionWithOccurrence,
   ISerializedGast,
   TokenType
-} from "../../../../api"
+} from "../../../../api.js"
 
 export abstract class AbstractProduction<T extends IProduction = IProduction>
   implements IProduction {

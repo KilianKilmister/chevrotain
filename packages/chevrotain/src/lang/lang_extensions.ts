@@ -1,5 +1,5 @@
-import { TokenType } from "../../api"
-import { isUndefined } from "../utils/utils"
+import { TokenType } from "../../api.js"
+import { isUndefined } from "../utils/utils.js"
 
 export function classNameFromInstance(instance: any): string {
   return functionName(instance.constructor)

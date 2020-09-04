@@ -1,7 +1,10 @@
 {
-  "packages": ["packages/*", "examples/*"],
+  "packages": [
+    "packages/*",
+    "examples/*"
+  ],
   "useWorkspaces": true,
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "command": {
     "version": {
       "allowBranch": "master",

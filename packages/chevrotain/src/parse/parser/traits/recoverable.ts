@@ -1,8 +1,8 @@
-import { createTokenInstance, EOF } from "../../../scan/tokens_public"
+import { createTokenInstance, EOF } from "../../../scan/tokens_public.js"
 import {
   AbstractNextTerminalAfterProductionWalker,
   IFirstAfterRepetition
-} from "../../grammar/interpreter"
+} from "../../grammar/interpreter.js"
 import {
   cloneArr,
   contains,
@@ -12,17 +12,17 @@ import {
   has,
   isEmpty,
   map
-} from "../../../utils/utils"
+} from "../../../utils/utils.js"
 import {
   IParserConfig,
   IToken,
   ITokenGrammarPath,
   TokenType
-} from "../../../../api"
-import { MismatchedTokenException } from "../../exceptions_public"
-import { IN } from "../../constants"
-import { MixedInParser } from "./parser_traits"
-import { DEFAULT_PARSER_CONFIG } from "../parser"
+} from "../../../../api.js"
+import { MismatchedTokenException } from "../../exceptions_public.js"
+import { IN } from "../../constants.js"
+import { MixedInParser } from "./parser_traits.js"
+import { DEFAULT_PARSER_CONFIG } from "../parser.js"
 
 export const EOF_FOLLOW_KEY: any = {}
 

@@ -7,17 +7,17 @@ import {
   map,
   toFastProperties,
   values
-} from "../../utils/utils"
-import { computeAllProdsFollows } from "../grammar/follow"
-import { createTokenInstance, EOF } from "../../scan/tokens_public"
+} from "../../utils/utils.js"
+import { computeAllProdsFollows } from "../grammar/follow.js"
+import { createTokenInstance, EOF } from "../../scan/tokens_public.js"
 import {
   defaultGrammarValidatorErrorProvider,
   defaultParserErrorProvider
-} from "../errors_public"
+} from "../errors_public.js"
 import {
   resolveGrammar,
   validateGrammar
-} from "../grammar/gast/gast_resolver_public"
+} from "../grammar/gast/gast_resolver_public.js"
 import {
   CstNode,
   IParserConfig,
@@ -27,19 +27,19 @@ import {
   IToken,
   TokenType,
   TokenVocabulary
-} from "../../../api"
-import { Recoverable } from "./traits/recoverable"
-import { LooksAhead } from "./traits/looksahead"
-import { TreeBuilder } from "./traits/tree_builder"
-import { LexerAdapter } from "./traits/lexer_adapter"
-import { RecognizerApi } from "./traits/recognizer_api"
-import { RecognizerEngine } from "./traits/recognizer_engine"
+} from "../../../api.js"
+import { Recoverable } from "./traits/recoverable.js"
+import { LooksAhead } from "./traits/looksahead.js"
+import { TreeBuilder } from "./traits/tree_builder.js"
+import { LexerAdapter } from "./traits/lexer_adapter.js"
+import { RecognizerApi } from "./traits/recognizer_api.js"
+import { RecognizerEngine } from "./traits/recognizer_engine.js"
 
-import { ErrorHandler } from "./traits/error_handler"
-import { MixedInParser } from "./traits/parser_traits"
-import { ContentAssist } from "./traits/context_assist"
-import { GastRecorder } from "./traits/gast_recorder"
-import { PerformanceTracer } from "./traits/perf_tracer"
+import { ErrorHandler } from "./traits/error_handler.js"
+import { MixedInParser } from "./traits/parser_traits.js"
+import { ContentAssist } from "./traits/context_assist.js"
+import { GastRecorder } from "./traits/gast_recorder.js"
+import { PerformanceTracer } from "./traits/perf_tracer.js"
 
 export const END_OF_FILE = createTokenInstance(
   EOF,

@@ -6,14 +6,14 @@ import {
   flatten,
   forEach,
   has
-} from "../../utils/utils"
-import { possiblePathsFrom } from "./interpreter"
-import { RestWalker } from "./rest"
-import { Predicate, TokenMatcher, lookAheadSequence } from "../parser/parser"
+} from "../../utils/utils.js"
+import { possiblePathsFrom } from "./interpreter.js"
+import { RestWalker } from "./rest.js"
+import { Predicate, TokenMatcher, lookAheadSequence } from "../parser/parser.js"
 import {
   tokenStructuredMatcher,
   tokenStructuredMatcherNoCategories
-} from "../../scan/tokens"
+} from "../../scan/tokens.js"
 import {
   AbstractProduction,
   Alternation,
@@ -24,14 +24,14 @@ import {
   RepetitionMandatoryWithSeparator,
   RepetitionWithSeparator,
   Rule
-} from "./gast/gast_public"
-import { GAstVisitor } from "./gast/gast_visitor_public"
+} from "./gast/gast_public.js"
+import { GAstVisitor } from "./gast/gast_visitor_public.js"
 import {
   IOrAlt,
   IProduction,
   IProductionWithOccurrence,
   TokenType
-} from "../../../api"
+} from "../../../api.js"
 
 export enum PROD_TYPE {
   OPTION,

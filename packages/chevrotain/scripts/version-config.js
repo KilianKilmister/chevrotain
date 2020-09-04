@@ -1,40 +1,43 @@
-const fs = require("fs")
-const jf = require("jsonfile")
-const path = require("path")
-const _ = require("lodash")
+import jf from "jsonfile";
+import * as fs from "fs/promises";
+import * as path from "path";
+import _ from "lodash";
 
-const versionPath = path.join(__dirname, "../src/version.ts")
-const packagePath = path.join(__dirname, "../package.json")
-const changeLogPath = path.join(__dirname, "../docs/changes/CHANGELOG.md")
+const __filename = fileURLToPath(import.meta.resolve)
+const __dirname = path.resolve(__filename, "../")
 
-const docsDirPath = path.join(__dirname, "../docs")
-const docFiles = fs.readdirSync(docsDirPath)
+const versionPath = path.resolve(__dirname, "../src/version.ts")
+const packagePath = path.resolve(__dirname, "../package.json")
+const changeLogPath = path.resolve(__dirname, "../docs/changes/CHANGELOG.md")
 
-const docFilesPaths = _.map(docFiles, function (file) {
-  return path.join(docsDirPath, file)
+const docsDirPath = path.resolve(__dirname, "../docs")
+const docFiles = await fs.readFile(docsDirPath)
+
+const docFilesPaths = _.map(docFiles, file => {
+  return path.resolve(docsDirPath, file)
 })
 
 function notChangesDocs(path) {
   return !_.includes(path, "changes/")
 }
 
-const markdownDocsFiles = _.reduce(
+const markdownDocsFiles = await _.reduce(
   docFilesPaths,
-  (result, currPath) => {
+  async (result, currPath) => {
     // Only scan 2 directories deep.
-    if (fs.lstatSync(currPath).isDirectory()) {
-      const nestedFiles = fs.readdirSync(currPath)
+    if (await fs.lstat(currPath).isDirectory()) {
+      const nestedFiles = await fs.readdir(currPath)
       const nestedPaths = _.map(nestedFiles, (currFile) =>
-        path.join(currPath, currFile)
+        path.resolve(currPath, currFile)
       )
       const newMarkdowns = _.filter(
         nestedPaths,
         (currPath) => _.endsWith(currPath, ".md") && notChangesDocs(currPath)
       )
 
-      result = result.concat(newMarkdowns)
+      result = (await result).concat(newMarkdowns)
     } else if (
-      fs.lstatSync(currPath).isFile() &&
+      (await fs.lstat(currPath)).isFile() &&
       _.endsWith(currPath, ".md") &&
       notChangesDocs(currPath)
     ) {
@@ -46,21 +49,21 @@ const markdownDocsFiles = _.reduce(
   []
 )
 
-const mainReadmePath = path.join(__dirname, "../../../readme.md")
+const mainReadmePath = path.resolve(__dirname, "../../../readme.md")
 markdownDocsFiles.push(mainReadmePath)
 
-const pkgJson = jf.readFileSync(packagePath)
-const apiString = fs.readFileSync(versionPath, "utf8").toString()
-const changeLogString = fs.readFileSync(changeLogPath, "utf8").toString()
+const pkgJson = await jf.readFile(packagePath)
+const apiString = await fs.readFile(versionPath, "utf8")
+const changeLogString = await fs.readFile(changeLogPath, "utf8")
 
-module.exports = {
-  versionPath: versionPath,
-  packagePath: packagePath,
-  changeLogPath: changeLogPath,
+export default {
+  versionPath,
+  packagePath,
+  changeLogPath,
   docFilesPaths: markdownDocsFiles,
   readmePath: mainReadmePath,
-  pkgJson: pkgJson,
-  apiString: apiString,
-  changeLogString: changeLogString,
+  pkgJson,
+  apiString,
+  changeLogString,
   currVersion: pkgJson.version
-}
+};

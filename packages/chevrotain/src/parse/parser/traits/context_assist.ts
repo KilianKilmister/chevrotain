@@ -3,13 +3,13 @@ import {
   IToken,
   ITokenGrammarPath,
   TokenType
-} from "../../../../api"
+} from "../../../../api.js"
 import {
   NextAfterTokenWalker,
   nextPossibleTokensAfter
-} from "../../grammar/interpreter"
-import { first, isUndefined } from "../../../utils/utils"
-import { MixedInParser } from "./parser_traits"
+} from "../../grammar/interpreter.js"
+import { first, isUndefined } from "../../../utils/utils.js"
+import { MixedInParser } from "./parser_traits.js"
 
 export class ContentAssist {
   initContentAssist() {}

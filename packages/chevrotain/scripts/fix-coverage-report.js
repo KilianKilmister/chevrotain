@@ -5,15 +5,17 @@
  * TODO: Try to remove this script in the future, perhaps it is a bug in TS source maps or nyc instrumentation.
  *      - 23/02/19 still broken with TypeScript 3.3.0
  */
-const fs = require("fs-extra")
-const path = require("path")
+import * as fs from "fs/promises";
+import * as path from "path";
+import { fileURLToPath } from 'url'
 
+console.log('"fixing"')
 const interPath = path.resolve(
-  __dirname,
-  "../lib/src/parse/grammar/interpreter.js"
+  fileURLToPath(import.meta.url),
+  "../../lib/src/parse/grammar/interpreter.js"
 )
 
-const interString = fs.readFileSync(interPath, "utf8").toString()
+const interString = await fs.readFile(interPath, "utf8")
 let fixedInterString = interString.replace(
   "var __extends =",
   "/* istanbul ignore next */ var __extends ="
@@ -24,4 +26,4 @@ fixedInterString = fixedInterString.replace(
   "/* istanbul ignore next */ || this"
 )
 
-fs.writeFileSync(interPath, fixedInterString)
+await fs.writeFile(interPath, fixedInterString)

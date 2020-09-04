@@ -1,4 +1,4 @@
-import { drop, forEach } from "../../utils/utils"
+import { drop, forEach } from "../../utils/utils.js"
 import {
   AbstractProduction,
   Alternation,
@@ -10,8 +10,8 @@ import {
   RepetitionMandatoryWithSeparator,
   RepetitionWithSeparator,
   Terminal
-} from "./gast/gast_public"
-import { IProduction } from "../../../api"
+} from "./gast/gast_public.js"
+import { IProduction } from "../../../api.js"
 
 /**
  *  A Grammar Walker that computes the "remaining" grammar "after" a productions in the grammar.

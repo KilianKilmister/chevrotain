@@ -1,4 +1,4 @@
-import { forEach, map } from "../utils/utils"
+import { forEach, map } from "../utils/utils.js"
 import {
   RepetitionMandatory,
   Option,
@@ -9,8 +9,8 @@ import {
   Alternation,
   Alternative,
   Repetition
-} from "../parse/grammar/gast/gast_public"
-import { IProduction, TokenType, Rule } from "../../api"
+} from "../parse/grammar/gast/gast_public.js"
+import { IProduction, TokenType, Rule } from "../../api.js"
 
 /**
  * Missing features
@@ -39,9 +39,9 @@ export function genUmdModule(options: { name: string; rules: Rule[] }): string {
 }(typeof self !== 'undefined' ? self : this, function (chevrotain) {
 
 ${genClass(options)}
-    
+
 return {
-    ${options.name}: ${options.name} 
+    ${options.name}: ${options.name}
 }
 }));
 `
@@ -51,9 +51,9 @@ export function genWrapperFunction(options: {
   name: string
   rules: Rule[]
 }): string {
-  return `    
+  return `
 ${genClass(options)}
-return new ${options.name}(tokenVocabulary, config)    
+return new ${options.name}(tokenVocabulary, config)
 `
 }
 
@@ -78,7 +78,7 @@ function ${options.name}(tokenVocabulary, config) {
 
 // inheritance as implemented in javascript in the previous decade... :(
 ${options.name}.prototype = Object.create(chevrotain.CstParser.prototype)
-${options.name}.prototype.constructor = ${options.name}    
+${options.name}.prototype.constructor = ${options.name}
     `
 
   return result

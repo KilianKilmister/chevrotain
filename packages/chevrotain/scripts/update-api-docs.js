@@ -1,24 +1,28 @@
-const _ = require("lodash")
-const fs = require("fs-extra")
-const path = require("path")
+import _ from "lodash";
+import * as fs from "fs/promises";
+import * as path from "path";
+import { fileURLToPath } from 'url'
 
-pkgPath = path.join(__dirname, "../package.json")
-const pkg = fs.readJsonSync(pkgPath)
+const __filename = fileURLToPath(import.meta.resolve)
+const __dirname = path.resolve(__filename, "../")
+
+const pkgPath = path.resolve(__dirname, "../package.json")
+const pkg = await fs.readFile(pkgPath)
 
 console.log("updating api docs re-direct")
 
 const version = pkg.version
 const noDotsVersion = version.replace(/\./g, "_")
-const newVersionApiDocsDir = path.join(
+const newVersionApiDocsDir = path.resolve(
   __dirname,
-  "../gh-pages/documentation/" + noDotsVersion
+  `../gh-pages/documentation/${noDotsVersion}`
 )
 
 try {
-  stats = fs.lstatSync(newVersionApiDocsDir)
+  stats = await fs.lstat(newVersionApiDocsDir)
 
   if (stats.isDirectory()) {
-    console.error("docs directory for " + noDotsVersion + " already exists")
+    console.error(`docs directory for ${noDotsVersion} already exists`)
     process.exit(-1)
   }
 } catch (e) {
@@ -26,18 +30,16 @@ try {
 }
 
 // Update redirect to latest docs
-const docsIndexHtmlPath = path.join(
+const docsIndexHtmlPath = path.resolve(
   __dirname,
   "../gh-pages/documentation/index.html"
 )
-const docsIndexHtmlString = fs
-  .readFileSync(docsIndexHtmlPath, "utf8")
-  .toString()
+const docsIndexHtmlString = await fs.readFile(docsIndexHtmlPath, "utf8")
 const bumpedDocsIndexHtmlString = docsIndexHtmlString.replace(
   /\d+_\d+_\d+/,
   noDotsVersion
 )
-fs.writeFileSync(docsIndexHtmlPath, bumpedDocsIndexHtmlString)
+fs.writeFile(docsIndexHtmlPath, bumpedDocsIndexHtmlString)
 
-const orgDocsLocation = path.join(__dirname, "../dev/docs")
-fs.copySync(orgDocsLocation, newVersionApiDocsDir)
+const orgDocsLocation = path.resolve(__dirname, "../dev/docs")
+fs.copyFile(orgDocsLocation, newVersionApiDocsDir)

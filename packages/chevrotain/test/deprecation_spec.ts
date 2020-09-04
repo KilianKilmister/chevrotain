@@ -4,6 +4,7 @@ import { createToken, Parser } from "../src/api"
 import { CstParser } from "../src/parse/parser/traits/parser_traits"
 import { IToken } from "../api"
 
+
 describe("Chevrotain's runtime deprecation checks", () => {
   it("Will throw an error if someone tries to use the deprecated Parser class", () => {
     expect(() => new Parser()).to.throw("The Parser class has been deprecated")

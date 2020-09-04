@@ -1,4 +1,4 @@
-import { CstNode, CstNodeLocation, IToken } from "../../../api"
+import { CstNode, CstNodeLocation, IToken } from "../../../api.js"
 
 /**
  * This nodeLocation tracking is not efficient and should only be used

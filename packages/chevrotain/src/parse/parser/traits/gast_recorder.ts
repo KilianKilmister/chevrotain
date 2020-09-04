@@ -13,7 +13,7 @@ import {
   OrMethodOpts,
   SubruleMethodOpts,
   TokenType
-} from "../../../../api"
+} from "../../../../api.js"
 import {
   forEach,
   has,
@@ -21,8 +21,8 @@ import {
   isFunction,
   peek,
   some
-} from "../../../utils/utils"
-import { MixedInParser } from "./parser_traits"
+} from "../../../utils/utils.js"
+import { MixedInParser } from "./parser_traits.js"
 import {
   Alternation,
   Alternative,
@@ -34,12 +34,12 @@ import {
   RepetitionWithSeparator,
   Rule,
   Terminal
-} from "../../grammar/gast/gast_public"
-import { Lexer } from "../../../scan/lexer_public"
-import { augmentTokenTypes, hasShortKeyProperty } from "../../../scan/tokens"
-import { createToken, createTokenInstance } from "../../../scan/tokens_public"
-import { END_OF_FILE } from "../parser"
-import { BITS_FOR_OCCURRENCE_IDX } from "../../grammar/keys"
+} from "../../grammar/gast/gast_public.js"
+import { Lexer } from "../../../scan/lexer_public.js"
+import { augmentTokenTypes, hasShortKeyProperty } from "../../../scan/tokens.js"
+import { createToken, createTokenInstance } from "../../../scan/tokens_public.js"
+import { END_OF_FILE } from "../parser.js"
+import { BITS_FOR_OCCURRENCE_IDX } from "../../grammar/keys.js"
 
 type ProdWithDef = IProduction & { definition?: IProduction[] }
 const RECORDING_NULL_OBJECT = {
