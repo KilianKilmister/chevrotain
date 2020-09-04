@@ -8,6 +8,7 @@ node_modules
 /npm-debug.log
 yarn-error.log
 .DS_Store
+/.history
 
 # Chevrotain package ignores
 # as prettier --ignore-path does not support nested folders ignores

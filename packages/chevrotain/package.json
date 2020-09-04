@@ -38,6 +38,12 @@
   ],
   "main": "lib/src/api.js",
   "module": "lib_esm/src/api.js",
+  "exports": {
+    ".": {
+      "require": "./lib/src/api.js",
+      "import": "./lib_esm/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/SAP/chevrotain.git"
@@ -60,7 +66,7 @@
     "clean:esm": "shx rm -rf lib_esm",
     "lint": "tslint --project tsconfig.json",
     "compile": "tsc && node ./scripts/fix-coverage-report.js",
-    "compile:esm": "tsc --project tsconfig.esm.json",
+    "compile:esm": "tsc --project tsconfig.esm.json && cp ./esm_pkg/* ./lib_esm/",
     "compile:watch": "tsc -w",
     "compile:def": "npm-run-all compile-def-api compile-def-modules compile-def-namespace",
     "dts": "node scripts/process-docs.js",
