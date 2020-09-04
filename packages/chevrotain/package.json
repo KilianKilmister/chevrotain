@@ -88,8 +88,7 @@
     "bundle:min": "webpack --config webpack_release_min.config.js"
   },
   "dependencies": {
-    "regexp-to-ast": "0.5.0",
-    "npm-run-all": "^4.1.5"
+    "regexp-to-ast": "0.5.0"
   },
   "devDependencies": {
     "@types/chai": "^4.0.10",
