@@ -25,6 +25,7 @@
   "files": [
     "lib_esm/src/**/*.js",
     "lib_esm/src/**/*.js.map",
+    "lib_esm/package.json",
     "lib/src/**/*.js",
     "lib/src/**/*.js.map",
     "lib/chevrotain.d.ts",
